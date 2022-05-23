@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Sign Up page
+	</title>
+</head>
+<body bgcolor="black">
+	<div id="d1" align="center">
+	
+	<form action="next.html" name="fm" style="text-align: center; " >
+		<h1 style="text-align: center;">SIGN UP</h1>
+
+	<div>
+		<label style="color: white font-weight:bold;"> First Name</label>
+		<input type="text" placeholder="Enter your first name" id="user" name="name"><br><br>
+		<span id="foruser" style="color: red; font-weight: bold"></span>
+	</div>
+
+	<div>
+		<label style="color: white font-weight:bold;"> Last Name</label>
+		<input type="text" placeholder="Enter your last name" id="user1" name="name"><br><br>
+		<span id="foruser4" style="color: red; font-weight: bold"></span>
+	</div>
+	
+	
+
+	<div>
+		<label style="color: white font-weight:bold">Password</label>
+		<input type="text" placeholder="Enter your Password" id="password" name="password" ><br><br>
+		<span id="foruser1" style="color: red; font-weight: bold"></span>
+	</div>
+
+	<div>
+		<label style="color: white font-weight:bold">Confirm Password</label>
+
+		<input type="text"placeholder ="Confirm Password" id="confirm" name="ConfirmPassword"><br><br>
+		<span id="foruser3" style="color: red; font-weight: bold"></span>
+	</div>
+
+
+	<div>
+		<label style="color: white font-weight:bold">Email</label>
+		<input type="text" placeholder="Enter your email Address" id="email" name="email"><br><br>
+		<span id="foruser5" style="color: red; font-weight: bold"></span>
+	</div>
+
+	<div>
+	<button id="bu" type="button" onclick="myFunction() " location.href="next.html">Sign UP</button> 
+	</div>
+</form>
+</div>
+
+<script>
+	function myFunction(){
+		var user=document.getElementById('user').value;
+		var user1=document.getElementById('user1').value;
+		var password=document.getElementById('password').value;
+		var confirm=document.getElementById('confirm').value;
+		var email=document.getElementById('email').value;
+
+
+		var format= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+	
+		
+		if (user==null || user==""){
+			document.getElementById('foruser').innerHTML="FirstName cannot be empty";
+			return false;
+		}
+
+
+		if (!isNaN(user)){
+			document.getElementById('foruser').innerHTML="Only character are allowed";
+			return false;
+		
+		}
+
+
+
+
+
+		if (user1==null || user1==""){
+			document.getElementById('foruser4').innerHTML="LastName cannot be empty";
+			return false;
+
+			}
+		if (!isNaN(user1)) {
+			document.getElementById('foruser4').innerHTML="only character are allowed";
+			return false;
+
+		}
+
+		if ((password.length<=7) || (password.length>=20)){
+			document.getElementById('foruser1').innerHTML="Password must be between 8 to 19 cahracters";
+			return false;
+		}
+		if (password !=confirm) {
+		 	document.getElementById('foruser3').innerHTML="Please enter same password";
+			return false;
+
+		 }
+		 if (email.indexOf('@')<=0) {
+		 	document.getElementById('foruser3').innerHTML="Please enter valid email";
+		 	return false;
+		
+		}
+		if (format.test(email.value)) {
+    		alert('Please provide a valid email address');
+    		email.focus;
+    		return false;
+    	}
+		
+		document.getElementById('bu').onclick=function(){
+			location.href="next.html";
+		}
+		localStorage.setItem("myValue", user);
+		window.location.href="next.html";
+	}
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<style>
+	#d1{
+		border: 5px outset red;
+  		background-color: lightblue;
+  		text-align: center;
+  		height: 700px;
+  		width: 500px;
+  		padding: inline;
+  		align-items: center;
+  		margin-left: 400px;
+  		
+  	}
+</style>
+
+</body>
+</html>
