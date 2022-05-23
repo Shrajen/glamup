@@ -1,0 +1,122 @@
+/* css for navbar */
+
+.container {
+    display: flex;
+}
+
+.container div {
+    padding-right: 20px;
+}
+
+.container div a {
+    text-decoration: none;
+}
+
+.search {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.container div a:hover {
+    color: white;
+    background-color: #26DD64;
+    padding: 10px;
+}
+
+.gridcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 100px));
+    grid-template-rows: repeat(3, 200px);
+    gap: 100px;
+    grid-auto-flow: dense;
+    justify-content: center;
+}
+
+.gridcontainer>div>img {
+    width: 200px;
+    height: 200px;
+    /* object-fit: cover; */
+}
+
+
+/* nav bar for mob device */
+
+.menu {
+    visibility: hidden;
+}
+
+@media all and (max-width: 680px) {
+    .container {
+        flex-wrap: wrap;
+    }
+    .container>div {
+        flex: 1 1 10%;
+    }
+    .search {
+        justify-content: flex-start;
+        margin-left: 50%;
+    }
+}
+
+@media all and (max-width: 524px) {
+    .container {
+        display: none;
+        flex-direction: column;
+    }
+    .container>div {
+        flex: 1 1 50%;
+    }
+    .search {
+        justify-content: flex-start;
+        margin-left: 0%;
+    }
+    .menu {
+        visibility: visible;
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+    }
+    /* dropdown menu */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+}
+
+
+/* footer */
+
+footer .tail {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tail a {
+    text-decoration: none;
+    padding-right: 50px;
+    color: black;
+}
