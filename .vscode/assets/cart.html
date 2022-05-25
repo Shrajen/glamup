@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .maincontainer {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/63a8b57ded.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="maincontainer">
+        <div>
+
+            <img id="dis" src="C:\Users\acer\OneDrive\Desktop\glamup\.vscode\assets\fo.jpg" width="300px">
+            </br>
+            <p>
+                <img src="C:\Users\acer\OneDrive\Desktop\glamup\.vscode\assets\fo.jpg" onclick="change()" id="im1" style="width: 85px;">
+                <img src="C:\Users\acer\OneDrive\Desktop\glamup\.vscode\assets\fo2.jpg" onclick="change2()" id="im2" style="width: 85px;">
+                <img src="C:\Users\acer\OneDrive\Desktop\glamup\.vscode\assets\fo3.jpg" onclick="change3()" id="im3" style="width: 85px;">
+            </p>
+        </div>''
+        <div>
+            <h3>5 in 1 Steps Matte Lipsticks Multicolor</h3>
+            <h4>Rs 500</h4>
+            <script>
+                function change() {
+                    let preview = document.getElementById('dis');
+                    preview.src = "fo.jpg";
+                }
+
+                function change2() {
+                    let preview = document.getElementById('dis');
+                    preview.src = "fo2.jpg";
+                }
+
+                function change3() {
+                    let preview = document.getElementById('dis');
+                    preview.src = "fo3.jpg";
+                }
+
+                function DecrementValue() {
+                    var value = parseInt(document.getElementById('number').value);
+                    if (value == 0) {
+                        document.getElementById('number').value = value;
+                        alert("Cannot go below 0");
+                    } else {
+                        value--;
+                        document.getElementById('number').value = value;
+                    }
+
+                }
+
+                function IncrementValue() {
+                    var num = parseInt(document.getElementById('number').value);
+                    if (num == 10) {
+                        document.getElementById('number').value = 10;
+                        alert("Cannot go beyond 10");
+                    } else {
+                        num++;
+                        document.getElementById('number').value = num;
+                    }
+
+                }
+            </script>
+            <p>Quantity:
+                <i class="fa-solid fa-minus" onclick="DecrementValue()"></i>
+                <input type="text" id="number" value="0" size="3">
+                <i class="fa-solid fa-plus" onclick="IncrementValue()"></i>
+            </p>
+            <button type="submit">Buy Now</button>
+            <button type="submit">Add to Cart</button>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

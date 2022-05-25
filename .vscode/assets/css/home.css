@@ -38,7 +38,11 @@
 .gridcontainer>div>img {
     width: 200px;
     height: 200px;
-    /* object-fit: cover; */
+}
+
+.gridcontainer>div>a>img {
+    width: 200px;
+    height: 200px;
 }
 
 
@@ -114,6 +118,29 @@
     .dropdown:hover .dropbtn {
         background-color: #3e8e41;
     }
+}
+
+.inv h1 {
+    text-align: center;
+}
+
+.gridcontainer p {
+    text-align: center;
+}
+
+.seller {
+    margin-left: 40px;
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    grid-template-rows: repeat(auto, 200px);
+    gap: 20px;
+    grid-auto-flow: dense;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    background-color: #1ECBE1;
+    padding: 20px;
 }
 
 
